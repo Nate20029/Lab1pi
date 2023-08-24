@@ -1,61 +1,61 @@
 "Testing with 4   cores" 
 "Static, 16" 
-Time elapsed = 7.000017e-02 seconds
-Time elapsed = 7.300019e-02 seconds
-Time elapsed = 7.000017e-02 seconds
-Time elapsed = 7.100010e-02 seconds
-Time elapsed = 7.400012e-02 seconds
-"Static, 64" 
-Time elapsed = 6.399989e-02 seconds
-Time elapsed = 6.299996e-02 seconds
-Time elapsed = 8.499980e-02 seconds
-Time elapsed = 7.499981e-02 seconds
-Time elapsed = 6.400013e-02 seconds
-"Static, 128" 
+Time elapsed = 7.200003e-02 seconds
 Time elapsed = 6.999993e-02 seconds
-Time elapsed = 6.900001e-02 seconds
-Time elapsed = 7.900000e-02 seconds
-Time elapsed = 6.599998e-02 seconds
-Time elapsed = 7.399988e-02 seconds
-"Dynamic, 16" 
-Time elapsed = 8.400011e-02 seconds
-Time elapsed = 7.900000e-02 seconds
-Time elapsed = 8.200002e-02 seconds
-Time elapsed = 8.899999e-02 seconds
-Time elapsed = 8.699989e-02 seconds
-"Dynamic, 64" 
-Time elapsed = 6.700015e-02 seconds
-Time elapsed = 6.800008e-02 seconds
-Time elapsed = 6.800008e-02 seconds
-Time elapsed = 6.599998e-02 seconds
-Time elapsed = 6.799984e-02 seconds
-"Dynamic, 128" 
-Time elapsed = 7.700014e-02 seconds
-Time elapsed = 7.599998e-02 seconds
-Time elapsed = 7.900000e-02 seconds
-Time elapsed = 7.299995e-02 seconds
-Time elapsed = 7.100010e-02 seconds
-"Guided, 16" 
-Time elapsed = 8.399987e-02 seconds
-Time elapsed = 6.800008e-02 seconds
-Time elapsed = 8.200002e-02 seconds
 Time elapsed = 7.199979e-02 seconds
-Time elapsed = 6.700015e-02 seconds
-"Dynamic, 64" 
-Time elapsed = 7.000017e-02 seconds
+Time elapsed = 7.500005e-02 seconds
+Time elapsed = 7.200003e-02 seconds
+"Static, 64" 
+Time elapsed = 8.599997e-02 seconds
+Time elapsed = 7.600021e-02 seconds
+Time elapsed = 8.399987e-02 seconds
 Time elapsed = 6.999993e-02 seconds
-Time elapsed = 8.100009e-02 seconds
-Time elapsed = 8.000016e-02 seconds
-Time elapsed = 7.000017e-02 seconds
+Time elapsed = 6.500006e-02 seconds
+"Static, 128" 
+Time elapsed = 7.200003e-02 seconds
+Time elapsed = 8.400011e-02 seconds
+Time elapsed = 8.500004e-02 seconds
+Time elapsed = 8.300018e-02 seconds
+Time elapsed = 7.599998e-02 seconds
+"Dynamic, 16" 
+Time elapsed = 8.699989e-02 seconds
+Time elapsed = 8.200002e-02 seconds
+Time elapsed = 8.299994e-02 seconds
+Time elapsed = 8.500004e-02 seconds
+Time elapsed = 8.399987e-02 seconds
+"Dynamic, 64" 
+Time elapsed = 6.900001e-02 seconds
+Time elapsed = 6.800008e-02 seconds
+Time elapsed = 7.900000e-02 seconds
+Time elapsed = 6.700015e-02 seconds
+Time elapsed = 6.699991e-02 seconds
 "Dynamic, 128" 
-Time elapsed = 7.000017e-02 seconds
-Time elapsed = 7.799983e-02 seconds
-Time elapsed = 6.800008e-02 seconds
+Time elapsed = 6.999993e-02 seconds
+Time elapsed = 6.999993e-02 seconds
+Time elapsed = 7.500005e-02 seconds
+Time elapsed = 7.399988e-02 seconds
+Time elapsed = 7.300019e-02 seconds
+"Guided, 16" 
+Time elapsed = 6.400013e-02 seconds
+Time elapsed = 7.599998e-02 seconds
+Time elapsed = 6.699991e-02 seconds
+Time elapsed = 6.999993e-02 seconds
+Time elapsed = 6.699991e-02 seconds
+"Guided, 64" 
+Time elapsed = 8.399987e-02 seconds
+Time elapsed = 6.500006e-02 seconds
 Time elapsed = 7.100010e-02 seconds
-Time elapsed = 6.900001e-02 seconds
+Time elapsed = 8.200002e-02 seconds
+Time elapsed = 6.500006e-02 seconds
+"Guided, 128" 
+Time elapsed = 7.200003e-02 seconds
+Time elapsed = 7.100010e-02 seconds
+Time elapsed = 8.299994e-02 seconds
+Time elapsed = 7.100010e-02 seconds
+Time elapsed = 7.100010e-02 seconds
 "Auto" 
-Time elapsed = 6.800008e-02 seconds
+Time elapsed = 8.100009e-02 seconds
+Time elapsed = 7.099986e-02 seconds
 Time elapsed = 8.000016e-02 seconds
-Time elapsed = 6.800008e-02 seconds
-Time elapsed = 6.900001e-02 seconds
-Time elapsed = 7.100010e-02 seconds
+Time elapsed = 7.200003e-02 seconds
+Time elapsed = 6.699991e-02 seconds

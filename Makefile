@@ -58,13 +58,13 @@ test: $(PROG)
 	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
 	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
 	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	echo "Dynamic, 64" >> $(OUTFILE)
+	echo "Guided, 64" >> $(OUTFILE)
 	set OMP_SCHEDULE=guided,64 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
 	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
 	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
 	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
 	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	echo "Dynamic, 128" >> $(OUTFILE)
+	echo "Guided, 128" >> $(OUTFILE)
 	set OMP_SCHEDULE=guided,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
 	set OMP_SCHEDULE=guided,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
 	set OMP_SCHEDULE=guided,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
@@ -80,3 +80,6 @@ test: $(PROG)
 
 clean:
 	del *.o $(PROG).exe
+
+alt: 
+	
