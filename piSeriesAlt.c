@@ -11,6 +11,7 @@ int main(int argc, char* argv[]) {
     double sum_odd = 0.0;
     double sum_even = 0.0;
     double sum;
+    double start, finish;  // Variables para medición de tiempo
 
     if (argc != 3) {
         Usage(argv[0]);
@@ -18,6 +19,8 @@ int main(int argc, char* argv[]) {
     
     thread_count = strtol(argv[1], NULL, 10);
     n = strtoll(argv[2], NULL, 10);
+
+    start = omp_get_wtime();  // Inicio de la medición del tiempo
 
     #pragma omp parallel for num_threads(thread_count) \
         reduction(+: sum_odd) reduction(+: sum_even) 
@@ -29,12 +32,15 @@ int main(int argc, char* argv[]) {
         }
     }
 
+    finish = omp_get_wtime();  // Fin de la medición del tiempo
+
     sum = sum_even - sum_odd;
     sum = 4.0 * sum;
     
     printf("With n = %lld terms and %d threads,\n", n, thread_count);
     printf("   Our estimate of pi = %.14f\n", sum);
     printf("                   PI = %.14f\n", 4.0*atan(1.0));
+    printf("Elapsed time = %e seconds\n", finish - start);  // Muestra el tiempo transcurrido
 
     return 0;
 } /* main */

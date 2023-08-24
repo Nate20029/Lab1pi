@@ -1,85 +1,23 @@
 CC = gcc
 CFLAGS = -g -Wall -fopenmp
-PROG = piSeriesNaivePolitics
-OBJS = piSeriesNaivePolitics.o
-CORES = 4  # Puedes ajustar este número al número de núcleos que desees usar
-OUTFILE = results.txt
 
-all: $(PROG)
+all: piSeriesAlt piSeriesNaivePolitics
 
-$(PROG): $(OBJS)
-	$(CC) $(CFLAGS) -o $(PROG) $(OBJS) -lm
+piSeriesAlt: piSeriesAlt.c
+	$(CC) $(CFLAGS) -o piSeriesAlt piSeriesAlt.c -lm
 
-$(OBJS): piSeriesNaivePolitics.c
-	$(CC) $(CFLAGS) -c piSeriesNaivePolitics.c
+piSeriesNaivePolitics: piSeriesNaivePolitics.c
+	$(CC) $(CFLAGS) -o piSeriesNaivePolitics piSeriesNaivePolitics.c -lm
 
-test: $(PROG)
-	echo "Testing with $(CORES) cores" > $(OUTFILE)
+test: piSeriesAlt piSeriesNaivePolitics
+	(set OMP_SCHEDULE=static,64 && piSeriesAlt 4 10000000 > piSeriesNaive_results.txt)
+	(set OMP_SCHEDULE=static,64 && piSeriesNaivePolitics 4 10000000 > piSeriesNaivePolitics_results.txt)
+	(set OMP_SCHEDULE=static,64 && piSeriesAlt 4 10000000 >> piSeriesNaive_results.txt)
+	(set OMP_SCHEDULE=static,64 && piSeriesNaivePolitics 4 10000000 >> piSeriesNaivePolitics_results.txt)
+	(set OMP_SCHEDULE=static,64 && piSeriesAlt 4 10000000 >> piSeriesNaive_results.txt)
+	(set OMP_SCHEDULE=static,64 && piSeriesNaivePolitics 4 10000000 >> piSeriesNaivePolitics_results.txt)
+	(set OMP_SCHEDULE=static,64 && piSeriesAlt 4 10000000 >> piSeriesNaive_results.txt)
+	(set OMP_SCHEDULE=static,64 && piSeriesNaivePolitics 4 10000000 >> piSeriesNaivePolitics_results.txt)
+	(set OMP_SCHEDULE=static,64 && piSeriesAlt 4 10000000 >> piSeriesNaive_results.txt)
+	(set OMP_SCHEDULE=static,64 && piSeriesNaivePolitics 4 10000000 >> piSeriesNaivePolitics_results.txt)
 
-	echo "Static, 16" >> $(OUTFILE)
-	set OMP_SCHEDULE=static,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=static,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=static,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=static,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=static,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	echo "Static, 64" >> $(OUTFILE)
-	set OMP_SCHEDULE=static,64 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=static,64 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=static,64 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=static,64 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=static,64 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	echo "Static, 128" >> $(OUTFILE)
-	set OMP_SCHEDULE=static,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=static,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=static,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=static,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=static,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	echo "Dynamic, 16" >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	echo "Dynamic, 64" >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,64 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,64 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,64 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,64 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,64 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	echo "Dynamic, 128" >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=dynamic,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	echo "Guided, 16" >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	echo "Guided, 64" >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,64 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,16 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	echo "Guided, 128" >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=guided,128 && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	echo "Auto" >> $(OUTFILE)
-	set OMP_SCHEDULE=auto && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=auto && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=auto && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=auto && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-	set OMP_SCHEDULE=auto && .\\$(PROG) $(CORES) 10000000 >> $(OUTFILE)
-
-
-clean:
-	del *.o $(PROG).exe
-
-alt: 
-	

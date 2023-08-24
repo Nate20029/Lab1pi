@@ -37,22 +37,22 @@ Time elapsed = 7.399988e-02 seconds
 Time elapsed = 7.300019e-02 seconds
 "Guided, 16" 
 Time elapsed = 6.400013e-02 seconds
-Time elapsed = 7.599998e-02 seconds
-Time elapsed = 6.699991e-02 seconds
-Time elapsed = 6.999993e-02 seconds
+Time elapsed =6.400013e-02 seconds
+Time elapsed = 6.400013e-02 seconds
+Time elapsed = 6.400013e-02 seconds
 Time elapsed = 6.699991e-02 seconds
 "Guided, 64" 
 Time elapsed = 8.399987e-02 seconds
-Time elapsed = 6.500006e-02 seconds
+Time elapsed = 8.399987e-02 seconds
 Time elapsed = 7.100010e-02 seconds
-Time elapsed = 8.200002e-02 seconds
+Time elapsed = 7.100010e-02 seconds
 Time elapsed = 6.500006e-02 seconds
 "Guided, 128" 
 Time elapsed = 7.200003e-02 seconds
 Time elapsed = 7.100010e-02 seconds
-Time elapsed = 8.299994e-02 seconds
-Time elapsed = 7.100010e-02 seconds
-Time elapsed = 7.100010e-02 seconds
+Time elapsed =  7.100010e-02seconds
+Time elapsed =  7.100010e-02 seconds
+Time elapsed =  7.100010e-02 seconds
 "Auto" 
 Time elapsed = 8.100009e-02 seconds
 Time elapsed = 7.099986e-02 seconds
